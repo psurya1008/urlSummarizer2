@@ -18,8 +18,11 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await axios.post('/api/summarize', { url });
-      setResults((prev) => [response.data, ...prev]);
+      const response = await axios.post(
+        'urlsummarybackend-production.up.railway.app/api/summarize',
+        { url }
+      );
+            setResults((prev) => [response.data, ...prev]);
       setUrl('');
     } catch (err) {
       setError(err?.response?.data?.error || 'Something went wrong');
