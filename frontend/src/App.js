@@ -19,7 +19,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.post(
-        'urlsummarybackend-production.up.railway.app/api/summarize',
+        'https://urlsummarybackend-production.up.railway.app/api/summarize',
         { url }
       );
             setResults((prev) => [response.data, ...prev]);
